@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ============================================
+         META INFORMACIÓN Y CONFIGURACIÓN
+    ============================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio profesional de Angel Gabriel Rodriguez Arroyo - Ingeniero Informático especializado en desarrollo móvil, web y certificado en AWS y Cisco.">
+    <meta name="keywords"
+        content="Ingeniero Informático, Desarrollador Web, Desarrollador Móvil, Flutter, AWS, Cisco, Portafolio">
+    <meta name="author" content="Angel Gabriel Rodriguez Arroyo">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Angel Gabriel Rodriguez Arroyo | Ingeniero Informático">
+    <meta property="og:description" content="Programador | Desarrollador Móvil y Web | Certificado AWS y Cisco">
+    <meta property="og:type" content="website">
+
+    <title>Angel Gabriel Rodriguez Arroyo | Ingeniero Informático</title>
+
+    <!-- ============================================
+         TIPOGRAFÍAS - Google Fonts (Inter)
+    ============================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ============================================
+         ICONOS - Font Awesome
+    ============================================= -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ============================================
+         ESTILOS PERSONALIZADOS
+    ============================================= -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ============================================
+         HEADER / NAVEGACIÓN STICKY
+    ============================================= -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo / Nombre -->
+            <a href="#inicio" class="nav__logo">
+                <span class="logo__icon">AG</span>
+                <span class="logo__text">Angel Gabriel</span>
+            </a>
+
+            <!-- Menú de Navegación -->
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#inicio" class="nav__link active">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#sobre-mi" class="nav__link">Sobre Mí</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#habilidades" class="nav__link">Habilidades</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#proyectos" class="nav__link">Proyectos</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contacto" class="nav__link">Contacto</a>
+                </li>
+            </ul>
+
+            <!-- Botón Móvil (Hamburger) -->
+            <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Botón Cerrar Menú Móvil -->
+            <button class="nav__close" id="nav-close" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         MAIN CONTENT
+    ============================================= -->
+    <main class="main">
+
+        <!-- ========================================
+             HERO SECTION (INICIO)
+        ========================================= -->
+        <section class="hero section" id="inicio">
+            <div class="hero__container container">
+                <!-- Contenido Principal del Hero -->
+                <div class="hero__content">
+                    <!-- Etiqueta de Bienvenida -->
+                    <span class="hero__subtitle animate-fade-in">
+                        <i class="fas fa-code"></i> ¡Bienvenido a mi portafolio!
+                    </span>
+
+                    <!-- Título Principal -->
+                    <h1 class="hero__title animate-fade-in">
+                        Angel Gabriel<br>
+                        <span class="hero__title-highlight">Rodriguez Arroyo</span>
+                    </h1>
+
+                    <!-- Subtítulo / Slogan -->
+                    <p class="hero__description animate-fade-in">
+                        <span class="typing-text">Programador</span> |
+                        <span class="typing-text">Desarrollador Móvil y Web</span> |
+                        <span class="typing-text">Certificado AWS y Cisco</span>
+                    </p>
+
+                    <!-- Botones CTA -->
+                    <div class="hero__buttons animate-fade-in">
+                        <a href="#proyectos" class="btn btn--primary">
+                            <i class="fas fa-folder-open"></i> Ver Proyectos
+                        </a>
+                        <a href="#contacto" class="btn btn--secondary">
+                            <i class="fas fa-paper-plane"></i> Contactar
+                        </a>
+                    </div>
+
+                    <!-- Indicadores Sociales -->
+                    <div class="hero__social animate-fade-in">
+                        <a href="https://github.com/angel050521" target="_blank" rel="noopener noreferrer"
+                            class="hero__social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/angel_050521" target="_blank" rel="noopener noreferrer"
+                            class="hero__social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                            class="hero__social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagen / Elemento Decorativo -->
+                <div class="hero__image animate-fade-in">
+                    <div class="hero__blob">
+                        <div class="hero__blob-inner">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <!-- Elementos flotantes decorativos -->
+                    <div class="floating-elements">
+                        <span class="floating-element" style="--delay: 0s;">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </span>
+                        <span class="floating-element" style="--delay: 1s;">
+                            <i class="fab fa-aws"></i>
+                        </span>
+                        <span class="floating-element" style="--delay: 2s;">
+                            <i class="fas fa-database"></i>
+                        </span>
+                        <span class="floating-element" style="--delay: 3s;">
+                            <i class="fab fa-html5"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicador de Scroll -->
+            <div class="hero__scroll">
+                <a href="#sobre-mi" class="hero__scroll-link">
+                    <span>Scroll</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SOBRE MÍ SECTION
+        ========================================= -->
+        <section class="about section" id="sobre-mi">
+            <div class="container">
+                <!-- Título de Sección -->
+                <div class="section__header">
+                    <span class="section__subtitle">Conóceme</span>
+                    <h2 class="section__title">Sobre Mí</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="about__container">
+                    <!-- Imagen / Avatar -->
+                    <div class="about__image-wrapper">
+                        <div class="about__image">
+                            <div class="about__avatar">
+                                <img src="images/1765570896974.jpg" alt="Angel Gabriel Rodriguez Arroyo"
+                                    class="about__photo">
+                            </div>
+                        </div>
+                        <!-- Badge de Formación -->
+                        <div class="about__experience-badge">
+                            <i class="fas fa-graduation-cap experience__icon"></i>
+                            <span class="experience__text">En Formación<br>& Aprendizaje Continuo</span>
+                        </div>
+                    </div>
+
+                    <!-- Contenido Sobre Mí -->
+                    <div class="about__content">
+                        <h3 class="about__title">
+                            Ingeniero Informático apasionado por el desarrollo
+                        </h3>
+
+                        <p class="about__description">
+                            Programador motivado y responsable, con experiencia en
+                            <strong>desarrollo móvil con Flutter</strong> y en programación y
+                            gestión de <strong>bases de datos con SQL</strong>. Comprometido con
+                            el trabajo en equipo y el aprendizaje continuo.
+                        </p>
+
+                        <!-- Tarjetas de Información -->
+                        <div class="about__info-cards">
+                            <div class="info-card">
+                                <div class="info-card__icon">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="info-card__content">
+                                    <h4>Certificado AWS</h4>
+                                    <p>Cloud Computing & Servicios en la Nube</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card__icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="info-card__content">
+                                    <h4>Certificado Cisco</h4>
+                                    <p>Networking & Infraestructura</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card__icon">
+                                    <i class="fas fa-vial"></i>
+                                </div>
+                                <div class="info-card__content">
+                                    <h4>Testing en la Nube</h4>
+                                    <p>Especialización en QA Cloud</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             HABILIDADES SECTION
+        ========================================= -->
+        <section class="skills section" id="habilidades">
+            <div class="container">
+                <!-- Título de Sección -->
+                <div class="section__header">
+                    <span class="section__subtitle">Mis Competencias</span>
+                    <h2 class="section__title">Habilidades Técnicas</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="skills__container">
+                    <!-- Categoría: Desarrollo -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">
+                            <i class="fas fa-code"></i> Desarrollo
+                        </h3>
+                        <div class="skills__list">
+                            <!-- Skill: Flutter -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon flutter-icon">
+                                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#02569B">
+                                        <path
+                                            d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" />
+                                    </svg>
+                                </div>
+                                <h4 class="skill-card__title">Flutter</h4>
+                                <p class="skill-card__description">Desarrollo Móvil</p>
+                            </div>
+
+                            <!-- Skill: SQL -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-database" style="color: #336791;"></i>
+                                </div>
+                                <h4 class="skill-card__title">SQL</h4>
+                                <p class="skill-card__description">Bases de Datos</p>
+                            </div>
+
+                            <!-- Skill: HTML -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fab fa-html5" style="color: #E34F26;"></i>
+                                </div>
+                                <h4 class="skill-card__title">HTML5</h4>
+                                <p class="skill-card__description">Estructura Web</p>
+                            </div>
+
+                            <!-- Skill: CSS -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                                </div>
+                                <h4 class="skill-card__title">CSS3</h4>
+                                <p class="skill-card__description">Estilos Web</p>
+                            </div>
+
+                            <!-- Skill: JavaScript -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+                                </div>
+                                <h4 class="skill-card__title">JavaScript</h4>
+                                <p class="skill-card__description">Programación Web</p>
+                            </div>
+
+                            <!-- Skill: PHP -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fab fa-php" style="color: #777BB4;"></i>
+                                </div>
+                                <h4 class="skill-card__title">PHP</h4>
+                                <p class="skill-card__description">Backend Web</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría: Diseño & Herramientas -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">
+                            <i class="fas fa-palette"></i> Diseño & Herramientas
+                        </h3>
+                        <div class="skills__list">
+                            <!-- Skill: UX/UI -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-paint-brush" style="color: #FF4081;"></i>
+                                </div>
+                                <h4 class="skill-card__title">UX/UI</h4>
+                                <p class="skill-card__description">Diseño de Interfaces</p>
+                            </div>
+
+                            <!-- Skill: Microsoft Office -->
+                            <div class="skill-card">
+                                <div class="skill-card__icon">
+                                    <i class="fab fa-microsoft" style="color: #00A4EF;"></i>
+                                </div>
+                                <h4 class="skill-card__title">Microsoft Office</h4>
+                                <p class="skill-card__description">Ofimática Avanzada</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría: Soft Skills -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">
+                            <i class="fas fa-brain"></i> Soft Skills
+                        </h3>
+                        <div class="skills__list skills__list--soft">
+                            <!-- Soft Skill: Pensamiento Analítico -->
+                            <div class="skill-card skill-card--soft">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-lightbulb" style="color: #FFC107;"></i>
+                                </div>
+                                <h4 class="skill-card__title">Pensamiento Analítico</h4>
+                                <p class="skill-card__description">Análisis y solución de problemas complejos</p>
+                            </div>
+
+                            <!-- Soft Skill: Resolución de Problemas -->
+                            <div class="skill-card skill-card--soft">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-puzzle-piece" style="color: #4CAF50;"></i>
+                                </div>
+                                <h4 class="skill-card__title">Resolución de Problemas</h4>
+                                <p class="skill-card__description">Enfoque efectivo y creativo</p>
+                            </div>
+
+                            <!-- Soft Skill: Trabajo en Equipo -->
+                            <div class="skill-card skill-card--soft">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-users" style="color: #2196F3;"></i>
+                                </div>
+                                <h4 class="skill-card__title">Trabajo en Equipo</h4>
+                                <p class="skill-card__description">Colaboración efectiva</p>
+                            </div>
+
+                            <!-- Soft Skill: Aprendizaje Continuo -->
+                            <div class="skill-card skill-card--soft">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-graduation-cap" style="color: #9C27B0;"></i>
+                                </div>
+                                <h4 class="skill-card__title">Aprendizaje Continuo</h4>
+                                <p class="skill-card__description">Actualización constante</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PROYECTOS SECTION (PORTAFOLIO)
+        ========================================= -->
+        <section class="projects section" id="proyectos">
+            <div class="container">
+                <!-- Título de Sección -->
+                <div class="section__header">
+                    <span class="section__subtitle">Mi Trabajo</span>
+                    <h2 class="section__title">Proyectos</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="projects__container">
+                    <!-- Proyecto 1: GESTY -->
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__category">
+                                    <i class="fab fa-android"></i> App Android
+                                </span>
+                            </div>
+                            <div class="project-card__placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">GESTY</h3>
+                            <p class="project-card__description">
+                                Aplicación móvil donde se aplicó creatividad y diseño UX/UI
+                                para ofrecer una experiencia de usuario intuitiva y moderna.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">UX/UI</span>
+                                <span class="tag">Android</span>
+                            </div>
+                            <a href="https://angel050521.github.io/gesty-landingPage/" target="_blank"
+                                rel="noopener noreferrer" class="project-card__btn">
+                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2: Teatro Constitución -->
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__category">
+                                    <i class="fas fa-globe"></i> Web
+                                </span>
+                            </div>
+                            <div class="project-card__placeholder">
+                                <i class="fas fa-theater-masks"></i>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Teatro Constitución de 1814</h3>
+                            <p class="project-card__description">
+                                Desarrollo web enfocado en la lógica de compra de boletos
+                                para el Centro Cultural de Apatzingán.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <a href="#" class="project-card__btn project-card__btn--disabled">
+                                <i class="fas fa-lock"></i> Próximamente
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 3: PADDI -->
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__category">
+                                    <i class="fas fa-desktop"></i> Plataforma
+                                </span>
+                            </div>
+                            <div class="project-card__placeholder">
+                                <i class="fas fa-child"></i>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">PADDI</h3>
+                            <p class="project-card__description">
+                                Plataforma de aprendizaje para discalculia infantil (Innovatec).
+                                Colaboré en el diseño UX/UI y estructura funcional.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">UX/UI</span>
+                                <span class="tag">Educación</span>
+                                <span class="tag">Innovatec</span>
+                            </div>
+                            <a href="#" class="project-card__btn project-card__btn--disabled">
+                                <i class="fas fa-lock"></i> Próximamente
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 4: CITRIMEX -->
+                    <article class="project-card">
+                        <div class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__category">
+                                    <i class="fas fa-globe"></i> Web
+                                </span>
+                            </div>
+                            <div class="project-card__placeholder">
+                                <i class="fas fa-lemon"></i>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">CITRIMEX</h3>
+                            <p class="project-card__description">
+                                Sitio web para empresa agrícola especializada en cítricos,
+                                con diseño moderno y responsivo.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <a href="https://angel050521.github.io/citrimex/" target="_blank" rel="noopener noreferrer"
+                                class="project-card__btn">
+                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             CONTACTO SECTION
+        ========================================= -->
+        <section class="contact section" id="contacto">
+            <div class="container">
+                <!-- Título de Sección -->
+                <div class="section__header">
+                    <span class="section__subtitle">¿Tienes un proyecto?</span>
+                    <h2 class="section__title">Contacto</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="contact__container">
+                    <!-- Información de Contacto -->
+                    <div class="contact__info">
+                        <h3 class="contact__info-title">¡Hablemos!</h3>
+                        <p class="contact__info-description">
+                            Estoy disponible para proyectos freelance, colaboraciones
+                            o cualquier consulta. No dudes en contactarme.
+                        </p>
+
+                        <!-- Tarjetas de Contacto -->
+                        <div class="contact__cards">
+                            <!-- Email -->
+                            <div class="contact-card">
+                                <div class="contact-card__icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-card__content">
+                                    <h4>Email</h4>
+                                    <a href="mailto:angelgabriel050521@gmail.com">
+                                        angelgabriel050521@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="contact-card">
+                                <div class="contact-card__icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-card__content">
+                                    <h4>Teléfono</h4>
+                                    <a href="tel:+524531978150">453-197-8150</a>
+                                </div>
+                            </div>
+
+                            <!-- Redes Sociales -->
+                            <div class="contact-card">
+                                <div class="contact-card__icon">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <div class="contact-card__content">
+                                    <h4>Twitter / X</h4>
+                                    <a href="https://twitter.com/angel_050521" target="_blank"
+                                        rel="noopener noreferrer">
+                                        @angel_050521
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <form class="contact__form" id="contact-form">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Nombre</label>
+                            <div class="form__input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" name="name" class="form__input"
+                                    placeholder="Tu nombre completo" required>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email</label>
+                            <div class="form__input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" class="form__input"
+                                    placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="message" class="form__label">Mensaje</label>
+                            <div class="form__input-wrapper form__input-wrapper--textarea">
+                                <i class="fas fa-comment-alt"></i>
+                                <textarea id="message" name="message" class="form__input form__textarea"
+                                    placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <!-- Logo y Descripción -->
+                <div class="footer__brand">
+                    <a href="#inicio" class="footer__logo">
+                        <span class="logo__icon">AG</span>
+                        <span class="logo__text">Angel Gabriel</span>
+                    </a>
+                    <p class="footer__description">
+                        Ingeniero Informático especializado en desarrollo móvil y web.
+                        Transformando ideas en soluciones digitales.
+                    </p>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div class="footer__links">
+                    <h4 class="footer__title">Enlaces</h4>
+                    <ul class="footer__menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="footer__social">
+                    <h4 class="footer__title">Sígueme</h4>
+                    <div class="footer__social-links">
+                        <a href="https://github.com/angel050521" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/angel_050521" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer__copyright">
+                <p>&copy; 2024 Angel Gabriel Rodriguez Arroyo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         BOTÓN SCROLL TO TOP
+    ============================================= -->
+    <a href="#inicio" class="scroll-top" id="scroll-top" aria-label="Ir arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- ============================================
+         SCRIPTS
+    ============================================= -->
+    <script src="script.js"></script>
+</body>
+
+</html>
