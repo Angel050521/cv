@@ -215,6 +215,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const supabaseReady = initSupabase();
 
     // ============================================
+    // N8N WEBHOOK NOTIFICATION
+    // ============================================
+    const sendToN8N = async (contactData) => {
+        // Verificar si n8n está configurado
+        if (!window.N8N_CONFIG ||
+            !window.N8N_CONFIG.ENABLED ||
+            window.N8N_CONFIG.WEBHOOK_URL === 'TU_WEBHOOK_N8N_AQUI') {
+            console.log('ℹ️ n8n no configurado, omitiendo notificación');
+            return;
+        }
+
+        try {
+            const response = await fetch(window.N8N_CONFIG.WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...contactData,
+                    timestamp: new Date().toISOString(),
+                    source: 'Portafolio - Formulario de Contacto'
+                })
+            });
+
+            if (response.ok) {
+                console.log('✅ Notificación enviada a n8n');
+            } else {
+                console.warn('⚠️ Error al enviar a n8n:', response.status);
+            }
+        } catch (error) {
+            // No lanzamos error para no afectar la experiencia del usuario
+            console.warn('⚠️ No se pudo enviar notificación a n8n:', error.message);
+        }
+    };
+
+    // ============================================
     // CONTACT FORM HANDLING
     // ============================================
     if (contactForm) {
@@ -244,18 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             submitBtn.disabled = true;
 
+            // Datos del contacto
+            const contactData = { name, email, message };
+
             try {
                 // Si Supabase está configurado, guardar en la base de datos
                 if (supabaseReady && supabase) {
                     const { data, error } = await supabase
                         .from('contactos')
-                        .insert([
-                            {
-                                name: name,
-                                email: email,
-                                message: message
-                            }
-                        ]);
+                        .insert([contactData]);
 
                     if (error) {
                         console.error('Error al guardar mensaje:', error);
@@ -263,6 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     console.log('✅ Mensaje guardado en Supabase:', data);
+
+                    // Enviar notificación a n8n (no bloquea si falla)
+                    sendToN8N(contactData);
+
                     showNotification('¡Mensaje enviado con éxito! 📬', 'success');
                 } else {
                     // Modo demo: simular envío si Supabase no está configurado
