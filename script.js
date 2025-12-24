@@ -185,10 +185,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ============================================
+    // SUPABASE INITIALIZATION
+    // ============================================
+    let supabase = null;
+
+    // Verificar si Supabase está configurado
+    const initSupabase = () => {
+        if (window.SUPABASE_CONFIG &&
+            window.SUPABASE_CONFIG.SUPABASE_URL !== 'TU_URL_DE_SUPABASE_AQUI' &&
+            window.SUPABASE_CONFIG.SUPABASE_KEY !== 'TU_CLAVE_ANONIMA_AQUI') {
+            try {
+                supabase = window.supabase.createClient(
+                    window.SUPABASE_CONFIG.SUPABASE_URL,
+                    window.SUPABASE_CONFIG.SUPABASE_KEY
+                );
+                console.log('✅ Supabase conectado correctamente');
+                return true;
+            } catch (error) {
+                console.error('❌ Error al conectar Supabase:', error);
+                return false;
+            }
+        } else {
+            console.warn('⚠️ Supabase no configurado. Los mensajes no se guardarán en la base de datos.');
+            console.warn('📝 Edita el archivo config.js con tus credenciales de Supabase.');
+            return false;
+        }
+    };
+
+    const supabaseReady = initSupabase();
+
+    // ============================================
     // CONTACT FORM HANDLING
     // ============================================
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             // Get form data
@@ -208,18 +238,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simulate form submission
+            // Show loading state
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                showNotification('¡Mensaje enviado con éxito!', 'success');
+            try {
+                // Si Supabase está configurado, guardar en la base de datos
+                if (supabaseReady && supabase) {
+                    const { data, error } = await supabase
+                        .from('contactos')
+                        .insert([
+                            {
+                                name: name,
+                                email: email,
+                                message: message
+                            }
+                        ]);
+
+                    if (error) {
+                        console.error('Error al guardar mensaje:', error);
+                        throw new Error(error.message);
+                    }
+
+                    console.log('✅ Mensaje guardado en Supabase:', data);
+                    showNotification('¡Mensaje enviado con éxito! 📬', 'success');
+                } else {
+                    // Modo demo: simular envío si Supabase no está configurado
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    showNotification('¡Mensaje enviado! (Modo demo - configura Supabase)', 'success');
+                }
+
                 contactForm.reset();
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('Error al enviar mensaje. Intenta de nuevo.', 'error');
+            } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            }, 2000);
+            }
         });
     }
 
